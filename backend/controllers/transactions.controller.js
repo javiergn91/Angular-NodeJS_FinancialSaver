@@ -3,7 +3,13 @@ const { transaction, category, paymentType } = require("../database");
 transactionsController = {};
 
 transactionsController.getTransactions = async (req, res) => {
-    res.json(await transaction.findAll());
+    res.json(await transaction.findAll({
+        include: [{
+            model: category
+        }, {
+            model: paymentType
+        }]
+    }));
 };
 
 transactionsController.addTransaction = async (req, res) => {

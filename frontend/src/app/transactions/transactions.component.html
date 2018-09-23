@@ -1,0 +1,64 @@
+<div class = "container">
+  <table style = "margin-bottom: 100px;">
+    <thead>
+      <th>Fecha</th>
+      <th>Ingreso/Egreso</th>
+      <th>Comentario</th>
+      <th>Categoría</th>
+      <th>Método de pago</th>
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.createdAt }}</td>
+        <td>{{ transaction.money_amount }}</td>
+        <td>{{ transaction.comment }}</td>
+        <td>{{ transaction.category.name }}</td>
+        <td>{{ transaction.createdAt }}</td>
+        <td><a href = "#!" (click)="deleteTransaction(transaction)">Eliminar</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <div>
+    <form #categoryForm="ngForm" (ngSubmit)="addCategory(categoryForm)">
+      Nueva categoría
+      <input type = "text" placeholder="Ej: Transporte" [(ngModel)]="category.name" name="category">
+      <button class = "btn primary">Agregar</button>
+    </form>
+
+    <hr>
+
+    <form>
+      Nuevo método de pago
+      <input id = "category" type = "text" placeholder="Ej: Santander Debito">
+      <button class = "btn primary">Agregar</button>
+    </form>
+
+    <hr>
+
+    <form class = "col s4">
+      Nuevo ingreso/egreso
+      <div>
+        <label>Comentario</label>
+        <input id = "category" type = "text" placeholder="Ej: Compra Lider">
+      </div>
+      <div>
+        <label for = "category">Costo</label>
+        <input id = "category" type = "text" placeholder="Ej: 23500">
+      </div>
+      <div>
+        <label>Categoría</label>
+        <select>
+          <option>asd</option>
+        </select>
+      </div>
+      <button class = "btn primary">Agregar</button>
+    </form>
+  </div>
+</div>
+
+
+
