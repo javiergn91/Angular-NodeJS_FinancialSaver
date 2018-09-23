@@ -1,0 +1,28 @@
+{
+  "name": "FinancialSaver",
+  "version": "1.0.0",
+  "description": "Web App built with Angular + Express + NodeJS + Postgres to track your money income and outcome.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javiergn91/FinancialSaver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javiergn91/FinancialSaver/issues"
+  },
+  "homepage": "https://github.com/javiergn91/FinancialSaver#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.1"
+  }
+}
