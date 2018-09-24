@@ -23,7 +23,7 @@
   <hr>
 
   <div>
-    <form #categoryForm="ngForm" (ngSubmit)="addCategory(categoryForm)">
+    <form (ngSubmit)="addCategory()">
       Nueva categoría
       <input type = "text" placeholder="Ej: Transporte" [(ngModel)]="category.name" name="category">
       <button class = "btn primary">Agregar</button>
@@ -31,9 +31,9 @@
 
     <hr>
 
-    <form>
+    <form (ngSubmit)="addPaymentType()">
       Nuevo método de pago
-      <input id = "category" type = "text" placeholder="Ej: Santander Debito">
+      <input id = "category" type = "text" placeholder="Ej: Santander Debito" [(ngModel)]="paymentType.name" name="paymentType">
       <button class = "btn primary">Agregar</button>
     </form>
 
@@ -52,9 +52,15 @@
       <div>
         <label>Categoría</label>
         <select>
-          <option>asd</option>
+          <option *ngFor="let category of categories">{{ category.name }}</option>
         </select>
       </div>
+      <div>
+          <label>Método de pago</label>
+          <select>
+            <option *ngFor="let paymentType of paymentTypes">{{ paymentType.name }}</option>
+          </select>
+        </div>
       <button class = "btn primary">Agregar</button>
     </form>
   </div>

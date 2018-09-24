@@ -6,6 +6,8 @@ export class Transaction {
     money_amount: number;
     comment: string;
     createdAt: string;
+    categoryId: number;
+    paymentTypeId: number;
     category: Category;
     paymentType: PaymentType;
 
@@ -17,5 +19,7 @@ export class Transaction {
         this.createdAt = "";
         this.category = new Category;
         this.paymentType = new PaymentType;
+        this.categoryId = -1;
+        this.paymentTypeId = -1;
     }
 }
